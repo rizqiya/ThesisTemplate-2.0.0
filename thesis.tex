@@ -1,0 +1,197 @@
+%% main.tex 
+%% Main page of thesis complete package using MikTex 2.9 and TexStudio
+%% 2015/10/05 
+%% by Rizqiya Windy Saputra
+%% contact me at rizqiya@students.itb.ac.id
+%% for current contact information.
+%%
+%% Support sites:
+%% https://www.sharelatex.com/
+%% thanks to : 
+%%		https://www.sharelatex.com,
+%%		tex.exchange.com,
+%%		stackoverflow.com,
+%%		and Many other references were taken from google search.
+%% ----------------------------------------------------------------
+
+
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+%% font
+\usepackage{times} %%times new roman
+%%\addto\captionsenglish{\renewcommand{\chaptername}{Lecture}}  %untuk mengganti nama judul setiap chapter
+
+%% memasukan gambar ke document
+\usepackage{float}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+%% package untuk mengatur layout
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%%\fancyhead[LE]{\slshape \rightmark} %section
+%%\fancyhead[RE]{\thepage}
+%%\fancyhead[RO]{\slshape \leftmark} % chapter
+\fancyhead[L]{}
+\usepackage{lipsum}
+\usepackage{pdflscape}
+
+%% membuat komentar panjang
+%% memasukan komentar yang panjang
+\usepackage{comment} %% pakai syntax \iffalse ---- \fi 
+%%cara lain memberi comment
+\usepackage{verbatim} %% bisa pakai \begin{comment} ---- \end{comment}
+\iffalse  
+%%ini bagian komentar,,\begin{comment}....\end{comment} tidak berfungsi pada bagian environment
+%%cara pertama ini merusak posisi dari list of table, jadi tidak dalam satu halaman masing-masing, tapi bisa diakali dengan \newpage
+	\usepackage{tocloft}
+	\setlength{\cftfignumwidth}{3.5em}
+	\setlength{\cfttabnumwidth}{3.5em}
+\fi 
+%% --- cara lain
+%%untuk mengatur jarak pada penomoran list of figure, agar tidak dempet
+\usepackage[titles]{tocloft}
+\cftsetindents{figure}{0em}{3.5em}
+\cftsetindents{table}{0em}{3.5em}
+
+%% numbering gambar/table agar sesuai dengan judul di setiap subsection
+\usepackage{amsmath}
+\numberwithin{figure}{section}
+\numberwithin {figure}{subsection}
+\numberwithin {table}{section}
+\numberwithin {table}{subsection}
+
+%%\fancyfoot[]{\thepage}
+\usepackage[a4paper,width=150mm,top=30mm,bottom=30mm]{geometry}
+\renewcommand{\headrulewidth}{0.4pt} %% memberi baris pada header dengan ukuran 0.4pt
+
+%% memberi spasi untuk judul 
+\usepackage{setspace}
+\usepackage{titlesec}
+\onehalfspacing
+
+%% mengurangi spasi di enumerate
+\usepackage{enumitem} %% dalam dokumen nanti tinggal tambahain [nolistsep] setelah \begin{enumerate} 
+%% cara ini ga kepake sih, karena menghilangkan space seluruhnya, tapi bisa dicoba akali dengan membuat \renewcommand
+
+%% package untuk meletakan judul Bab di tengah
+\usepackage{sectsty} 
+\chapterfont {\centering} %% centering chapter
+%%\sectionfont {\centering} %%section center
+\setcounter{secnumdepth}{3} %% angka pada subsubsection
+
+%% Mengatur Table kolom dan baris, merge, colouring dll
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+
+%% Memberi indent untuk paragraph pertama
+\usepackage{indentfirst}
+\setlength\parindent{30pt}
+
+%% Memasukan referensi
+\usepackage[hyphens]{url} %%ditambahkan agar link url muncul di referensi
+
+%%daftar singkatan
+\usepackage[acronym, nopostdot,nonumberlist,toc]{glossaries}
+\usepackage{acronym}
+\makeglossaries
+\loadglsentries{glossary.tex}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+	\vspace{1cm}
+	\large
+		\textbf{SMART DISASTER MANAGEMENT BASED ON SERVICE SYSTEM ENGINEERING}\\
+	
+	\vspace{3cm}
+	\textbf{THESIS}
+	
+	\normalsize
+		\textbf{A Thesis Submitted in Partial Fulfillment\\
+		for the Degree of Magister from\\
+		Bandung Institute of Technology}
+	
+	\vfill
+	\large
+		\textbf{Rizqiya Windy Saputra}\\
+		\textbf{23513146}\\
+		\textbf{Magister of Informatics Study Program}
+	
+	\vspace{1cm}
+	\includegraphics[scale=0.2]{logo-itb.jpg}
+	
+	\large
+		\textbf{BANDUNG INSTITUTE OF TECHNOLOGY\\
+		April, 2017}
+\end{center}
+\end{titlepage}
+\cleardoublepage
+
+%% The Front Matter
+\clearpage
+\pagenumbering{roman}
+\chapter*{ABSTRACT}
+\addcontentsline{toc}{chapter*}{ABSTRACT}
+\begin{center}
+	\large
+		\textbf{INTELLIGENT DISASTER MANAGEMENT BASED ON SERVICE SYSTEM ENGINEERING}\\
+	\vspace{0.5cm} %% memberikan spasi
+	\normalsize
+		\textbf{Rizqiya Windy Saputra}\\
+		\textbf{23513146}\\
+		\textbf{Magister of Informatics Study Program}
+\end{center}
+
+	Indonesian government using Hyogo Framework for Action (HFA) since January 2005. HFA is a global blueprint for 10-year plan to make the world safer from disaster losses. Since the implementation, Indonesia still has many challenges in developing Disaster Management (DM) Framework based on HFA. As one of many countries with disaster vulnerability, government aims to increase the resilience for their country. One of the ways is to deliver the value of Disaster Management to the communities by services provided. Service System Engineering (SSE) is growing faster now days. In this research, the DM Framework will be provided with the combination of SSE and HFA. SSE can be explain as individual and functional systems are linked together to define new meta-model system that can improve robustness, lower cost and increase reliability from Disaster Management. As the result, the research will provide the Architecture of Disaster Management that suitable for using in Indonesia.
+%%\chapter*{Dedication}
+%%thanks to ...
+%%\chapter*{Acknowledment}
+%%thanks to ....
+\doublespacing
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contents}
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\glsaddall
+\printglossary[title={List of Terms}] %% makeindex thesis.glo -s thesis.ist -t thesis.glg -o thesis.gls
+\printacronyms[title=List of Abbreviations] %% makeindex -s thesis.ist -o thesis.acr thesis.acn ...>> pdflatex thesis.tex
+\renewcommand*{\glossarypreamble}{\thispagestyle{fancy}}
+\renewcommand{\bibname}{References}
+
+%% The Body Matter
+\newpage
+\pagenumbering{arabic}
+\renewcommand{\baselinestretch}{2.5}  %spacing 1,5
+%%\titlespacing*{\chapter}{0pt}{0pt}{40pt}
+\titleformat{\chapter}[hang] %% reformat the chapter 
+{\normalfont\Large\bfseries\centering\vspace{-4cm}}{\chaptertitlename\ \thechapter:}{1em}{}
+%% resize the font in section, subsection or subsubsection
+\sectionfont{\large}
+\subsectionfont{\small}
+\subsubsectionfont{\normalfont\small}
+
+\input{./chapters/chapter01.tex}
+\input{./chapters/chapter02.tex}
+\input{./chapters/chapter03.tex}
+\input{./chapters/chapter04.tex}
+\input{./chapters/chapter05.tex}
+
+%% The End Matter
+%%\appendix 
+%%\chapter{Appendix 1: Research Project Manager}
+%%\input{./chapters/appendix.tex}
+
+%% Print halaman referensi
+\bibliographystyle{unsrt}
+\bibliography{referensi}
+%%\bibliographystyle{plain}
+\nocite{*}
+\end{document}

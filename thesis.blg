@@ -1,0 +1,24 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+The style file: unsrt.bst
+Database file #1: referensi.bib
+I was expecting a `,' or a `}'---line 24 of file referensi.bib
+ : 
+ : volume = {4},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 106 of file referensi.bib
+ : issue = Socio-Economic 
+ :                        Planning 42},
+I'm skipping whatever remains of this entry
+Warning--empty journal in Framework2013
+Warning--there's a number but no volume in Framework2013
+Warning--empty publisher in ThesisKangTeguh
+Warning--empty journal in Kusmiati
+Warning--empty year in Kusmiati
+Warning--empty journal in Haubrock2007
+Too many commas in name 1 of "Pfefferbaum, Betty, M.D.,J.D and Shaw, John A. M.D." for entry DisasterDefinition
+while executing---line 944 of file unsrt.bst
+Warning--empty journal in DMModelGuideline
+Warning--empty journal in MASDIsaster
+Warning--empty journal in PatternRiskManagment
+(There were 3 error messages)
